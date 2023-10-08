@@ -1,0 +1,11 @@
+mediadealtura = []
+alunos = 0
+while True:
+    pesos = float(input('altura do aluno: [m] '))
+    mediadealtura.append(pesos)
+    alunos += 1
+    deseja = str(input('Deseja cadastrar o peso de mais lagum aluno? [S/N] ')).upper().strip()[0]
+    if deseja == 'N':
+        break
+media = sum(mediadealtura) / len(mediadealtura)
+print(f'Foram cadastrados {alunos} alunos, e a média de alturas deles é {media}m')
