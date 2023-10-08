@@ -1,0 +1,8 @@
+print('BEM VINDO AO CALCULADOR DE GORJETA!')
+print('-'*35)
+conta = float(input('Qual foi o total da conta? R$:'))
+gorjeta = int(input('Qual é a porcentagem que você deseja dar de gorjeta? '))
+pessoas = int(input('Quantas pessoas iram pagar a conta? '))
+totalconta = (conta + (conta * gorjeta/100)) / pessoas
+print(f'Cada pessoa irá pagar {totalconta:.2f}R$')
+print(f'{round(totalconta, 2)}R$') # round
