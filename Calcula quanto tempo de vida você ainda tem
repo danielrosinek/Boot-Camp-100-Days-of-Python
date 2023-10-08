@@ -1,0 +1,7 @@
+# Quantos dias, semanas e messes você tem de vida considerando que viva até os 90 anos.
+idade = int(input('Qual é a sua idade? '))
+# primeiro calculo o total de tempo que 90 anos usaria e depois subitraio pelo tempo que já foi vivido.
+dias = (365 * 90) - (365 * idade)
+semanas = (52 * 90) - (52 * idade)
+messes = (12 * 90) - (12 * idade)
+print(f'Você tem: {dias} dias, {semanas} semanas, {messes} messes.')
