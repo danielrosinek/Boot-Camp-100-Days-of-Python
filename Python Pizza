@@ -1,0 +1,26 @@
+print('-'*26)
+print('BEM-VINDO A PYTHON PIZZA!')
+print('-'*26)
+tamanho = str(input('Temos os tamnhos:\n[P] Pequena = 15R$\n[M] Média = 20R$\n[G] Grande = 25R$\nQual você irá querer? [P,M,G]: ')).strip().upper()[0]
+valor = 0
+if tamanho == 'P':
+    valor += 15
+    peperonepeuqena = str(input('Quer adicional de Pepperoni para Pizza Pequena? +2R$ [S/N] ')).strip().upper()[0]
+    if peperonepeuqena == 'S':
+        valor += 2
+elif tamanho == 'M':
+    valor += 20
+    peperonegrande = str(input('Quer adicional de Pepperoni para Pizza média/grande? +4R$ [S/N] ')).strip().upper()[0]
+    if peperonegrande == 'S':
+        valor += 4
+elif tamanho == 'G':
+    valor += 25
+    peperonegrande = str(input('Quer adicional de Pepperoni para Pizza média/grande? +4R$ [S/N] ')).strip().upper()[0]
+    if peperonegrande == 'S':
+        valor += 4
+queijoextra = str(input('Quer queijo extra? 5R$ [S/N] ')).strip().upper()[0]
+if queijoextra == 'S':
+    valor += 5
+print('-'*32)
+print('Muito Obrigado por comprar com Python Pizza!')
+print(f'O valor total ficou: {valor:.2f}R$')
