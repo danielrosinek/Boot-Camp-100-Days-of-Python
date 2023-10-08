@@ -1,0 +1,34 @@
+import random
+
+palavras = ['coelho', 'barco', 'gato', 'cachorro']
+escolhida = random.choice(palavras)
+espaço = len(escolhida)
+forca = []
+fim_do_jogo = False
+vidas = 6
+
+for n in range(espaço):
+    forca.append("_")
+
+while fim_do_jogo == False:
+
+    print(escolhida)
+    print(forca)
+    usuario = str(input('Diga uma letra: ')).strip().lower()[0]
+
+    for posição in range(espaço):
+        letra = escolhida[posição]
+        if letra == usuario:
+            forca[posição] = letra
+
+    if '_' not in forca:
+        fim_do_jogo = True
+        print(forca)
+        print('VOCÊ VENCEU!')
+
+    if usuario not in forca:
+        vidas -= 1
+        print(f'Você ainda tem {vidas} chances.')
+        if vidas == 0:
+            fim_do_jogo = True
+            print('Você perdeu.')
