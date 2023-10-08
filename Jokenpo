@@ -1,0 +1,55 @@
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+lista = [rock, paper, scissors]
+
+print(f"{'Bem-Vindo ao Jogo Pedra, Papel, Tesoura!':^45}")
+print('-'*45)
+
+escolha = int(input('Faça sua escolha: [0] Pedra [1] Papel [2] Tesoura -> '))
+computador = random.randint(0, 2)
+print(f'Você escolheu:\n{lista[escolha]}')
+print(f'o computador escolheu:\n {lista[computador]}')
+
+if escolha == computador:
+    print('Empate!')
+elif escolha == 0 and computador == 1:
+    print('Você perdeu.')
+elif escolha == 0 and computador == 2:
+    print('Você venceu!')
+elif escolha == 1 and computador == 0:
+    print('Você venceu!')
+elif escolha == 1 and computador == 2:
+    print('Você perdeu!')
+elif escolha == 2 and computador == 0:
+    print('Você perdeu.')
+elif escolha == 2 and computador == 1:
+    print('Você venceu!')
+else:
+    print('Número inválido.')
