@@ -1,0 +1,13 @@
+from random import randint
+nomes = []
+
+while True:
+    nome = str(input('Nome: '))
+    nomes.append(nome)
+    deseja = str(input('Deseja inserir mais algum nome ao sorteio? [S/N] ')).upper().strip()[0]
+    if deseja == 'N':
+        break
+print(f'Essa é alista de nomes: {nomes}\n')
+sor = len(nomes)
+sorteado = randint(0, sor-1)
+print(f'E o sorteado para pagar a conta foi: {nomes[sorteado]}')
