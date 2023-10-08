@@ -1,0 +1,37 @@
+import random
+
+print(f'{"Bem-Vindo ao gerador de senhas!":.^50}\n')
+tamanholetras = int(input('Quantas letras você quer ter na sua senha? '))
+tamanhonumeros = int(input('Quantos números você quer que tenha na sua senha? '))
+tamanhosimbolos = int(input(('Quantos simbolos você quer que tenha na sua senha? ')))
+print('')
+
+senha = []
+
+letras = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
+          'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N',
+          'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+numeros = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
+simbolos = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+
+for n in range(0, tamanhosimbolos):
+    sorteio = random.randint(0, len(numeros) - 1) #Len -1 para não dar erro!
+    senha.append(numeros[sorteio])
+
+for n in range(0, tamanhosimbolos):
+    sorteio = random.randint(0, len(simbolos) - 1) #Len -1 para não dar erro!
+    senha.append(simbolos[sorteio])
+
+for n in range(0, tamanholetras):
+    sorteio = random.randint(0, len(letras) - 1) #Len -1 para não dar erro!
+    senha.append(letras[sorteio])
+
+print(f'A lista de caracteres selecionados foi: {senha}')
+
+# Embaralhando a senha para torná-la mais aleatória
+random.shuffle(senha)
+
+# Convertendo a lista de senha em uma string
+senha_str = ''.join(senha)
+
+print('Senha gerada:', senha_str)
