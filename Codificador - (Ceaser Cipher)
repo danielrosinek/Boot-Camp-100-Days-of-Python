@@ -1,0 +1,24 @@
+def Cesar(começo_texto, deslocamento, direção):
+    fim_texto = ''
+    if direção == 'descodificar':
+        deslocamento *= -1  # multiplicando por -1 o deslocamento, faz com que o contador ande ao inverso na contagem.
+    for caractere in começo_texto:
+        if caractere in alfabeto:
+            posição = alfabeto.index(caractere)
+            nova_posição = posição + deslocamento
+            fim_texto += alfabeto[nova_posição]
+        else:
+            fim_texto += caractere
+    print(f'Aqui está {direção}: {fim_texto}')
+
+
+while True:  # pergunta ao usuário se ele deseja executar o código novamente.
+    direção = input("Digite 'codificar' para criptografar, digite 'descodificar' para descriptografar:\n")
+    texto = input("Digite sua mensagem:\n").lower()
+    deslocamento = int(input("Digite o número do turno:\n"))
+    deslocamento = deslocamento % 26  # 26 letras no alfabeto, dividice por 26 para usar o resto, caso o usuario digite um deslocamento superior ao numero de letras em alfabeto, evitando assim bugs
+    Cesar(começo_texto=texto, deslocamento=deslocamento, direção=direção)
+    deseja = input('Deseja executar o novamente? [S/N]').strip().upper()[0]
+    if deseja == 'N':
+        print('Obrigado por usar o codificador.')
+        break
