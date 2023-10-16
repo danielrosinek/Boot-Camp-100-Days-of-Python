@@ -1,0 +1,40 @@
+logo = '''
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\\
+                       .-------------.
+                      /_______________\\
+'''
+print(logo)
+
+lances = {}
+
+def encontrando_maior_valor(valores):
+    maior_lance = 0
+    vencedor = ''
+    for valor in valores:
+        valor_lance = valores[valor]
+        if valor_lance > maior_lance:
+            maior_lance = valor_lance
+            vencedor = valor
+    print(f'Lista = {lances}')
+    print('...')
+    print(f'O vencedor é {vencedor} com o valor de: {maior_lance}R$')
+
+fim = False
+
+while not fim:
+
+    nome = str(input('Qual é o seu nome: '))
+    lance = int(input('Qual é o seu lance? R$ '))
+    pessoas_continuar = str(input('Mais alguem vai participar do lane? [S/N] ')).strip().upper()[0]
+    lances[nome] = lance
+    if pessoas_continuar == 'N':
+        fim = True
+        encontrando_maior_valor(lances)
