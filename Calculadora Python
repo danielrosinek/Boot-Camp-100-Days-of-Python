@@ -1,0 +1,53 @@
+print(f'{"Calculadora Python":.^40}')
+
+def soma(p, s): #  p = primeiro, s = segundo
+    return p + s
+
+
+def diminuir(p, s):
+    diminuir = p - s
+    return diminuir
+
+def divisão(p, s):
+    divisão = p / s
+    return divisão
+
+
+def multiplicação(p, s):
+    multiplicação = p * s
+    return multiplicação
+
+
+def calculadora():
+    n1 = float(input('primeiro número: '))
+
+    while True:
+
+        print('''operadores:
+        +
+        -
+        /
+        *''')
+        operação = str(input('Escolha a operação: '))
+        n2 = float(input('segundo número: '))
+        if operação == '+':
+            print(f'{n1} + {n2} = {soma(n1, n2)}')
+            resultado = soma(n1, n2)
+        elif operação == '-':
+            print(f'{n1} - {n2} = {diminuir(n1, n2)}')
+            resultado = diminuir(n1, n2)
+        elif operação == '/':
+            print(f'{n1} / {n2} = {divisão(n1, n2)}')
+            resultado = divisão(n1, n2)
+        elif operação == '*':
+            print(f'{n1} x {n2} = {multiplicação(n1, n2)}')
+            resultado = multiplicação(n1, n2)
+        deseja = str(input('Quer usar a calculadora novamente? [S/N] ')).strip().lower()[0]
+        if deseja == 'n':
+            break
+        if str(input(f'Quer continuar usando o resultado {resultado}? [S/N] ')).strip().lower()[0] == 's':
+            n1 = resultado
+        else:
+            calculadora()
+
+calculadora()
